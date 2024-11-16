@@ -1,11 +1,10 @@
-let name: string = "Naveen";
+import express from  "express"
 
-let details: {
-  name: string;
-  age: number;
-  college: string;
-} = {
-  name: name,
-  age: 20,
-  college: "SRM"
-};
+const app =  express()
+
+const PORT = 5000
+
+
+app.listen(PORT, () => {
+	console.log(`Server is running on http://localhost:${PORT}`)
+})
