@@ -1,4 +1,4 @@
-import  { Schema, model } from "mongoose"
+import { Schema, model } from "mongoose"
 
 export const Task = model("Task", new Schema({
 	name: {
@@ -11,17 +11,21 @@ export const Task = model("Task", new Schema({
 		required: [true, "Description is required"]
 
 	},
-		user: {
-		type: Schema.Types.ObjectId,
-		ref:"User"
+	status: {
+		type: Boolean,
+		default: false
 
-		},
-	createdAt:{
+	},
+	user: {
+		type: Schema.Types.ObjectId,
+		ref: "User"
+	},
+	createdAt: {
 		type: Date,
 		default: Date.now
 	},
-	updatedAt:{
+	updatedAt: {
 		type: Date,
 	}
 
-})) 
+}))
