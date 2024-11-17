@@ -35,4 +35,4 @@ export const User = model("User", new Schema({
 		type: Date,
 	}
 
-})) 
+}))
