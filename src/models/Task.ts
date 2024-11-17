@@ -11,6 +11,12 @@ export const Task = model("Task", new Schema({
 		required: [true, "Preencha o campo descrição"]
 
 	},
+	priority: {
+    type:String,
+    required: true,
+    enum: ['Necessária','Importante','Urgente'],
+    default:'Necessária',
+  },
 	status: {
     type:String,
     required: true,
