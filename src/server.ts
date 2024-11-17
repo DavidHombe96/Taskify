@@ -1,16 +1,23 @@
-import express from  "express"
-import  {userRouter}  from "./routes/userRoutes"
+import express from "express"
+import { dbConnect } from "./database"
+import { userRouter } from "./routes/userRoutes"
 import { taskRouter } from "./routes/taskRoutes"
 
-const app =  express()
+const startServer = () => {
+	const app = express()
+	const PORT = 50001
 
-app.use(express.json())
+	app.use(express.json())
 
-const PORT = 50001
+	// Routas
+	app.use("/api/v1/users", userRouter)
+	app.use("/api/v1/tasks", taskRouter)
 
-app.use("/api/v1/users", userRouter)
-app.use("/api/v1/tasks", taskRouter)
+	app.listen(PORT, () => {
+		console.log(`🚀 Servidor a rodar no endereço:http://localhost:${PORT}`)
+	})
+}
 
-app.listen(PORT, () => {
-	console.log(`Server is running on http://localhost:${PORT}`)
-})
+// Database
+dbConnect().then(startServer)
+	.catch(() => process.exit(1))
