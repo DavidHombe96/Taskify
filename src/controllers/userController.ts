@@ -1,16 +1,26 @@
 import { Request, Response } from "express"
+import { User } from "../models/User"
 
-export const registerUserController = (req: Request, res: Response) => {
+export const registerUserController = async (req: Request, res: Response) => {
 	const { lastname, firstname, email, password } = req.body
 
 	try {
-
+		const newUser = await User.create({
+			lastname,
+			firstname,
+			email,
+			password
+		})
 		res.status(201).json({
-			lastname, firstname, email, password
+			message: "success",
+			user: newUser
 		})
 
 	} catch (error) {
-		console.log("Error: ", error)
+		res.status(500).json({
+			error: error,
+			message: "Não foi possível criar a conta."
+		});
 	}
 }
 
