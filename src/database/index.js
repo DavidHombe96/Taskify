@@ -1,9 +1,7 @@
 import mongoose from 'mongoose';
 import 'dotenv/config'
 
-
-
-export const dbConnect = async (): Promise<void> => {
+export const dbConnect = async ()=> {
 	try {
 		const URI = process.env.MONGODB_CLOUD_LOCAL
 
@@ -12,7 +10,7 @@ export const dbConnect = async (): Promise<void> => {
 		}
 		await mongoose.connect(URI)
 		console.log('🎲 Banco de dados connectado com sucesso!')
-	} catch (error: unknown) {
+	} catch (error) {
 		if (error instanceof Error) {
 			console.error('Erro ao se conectar ao banco de dados:',  error.message);
 		} else {
