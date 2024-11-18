@@ -1,8 +1,6 @@
-import { Request, Response } from "express"
 
 
-
-export const createTaskController = (req: Request, res: Response) => {
+export const createTaskController = (req, res) => {
 	const {  } = req.body
 	try {
 
@@ -18,7 +16,7 @@ export const createTaskController = (req: Request, res: Response) => {
 	}
 }
 
-export const getTasksController = (req: Request, res: Response) => {
+export const getTasksController = (req, res) => {
 	try {
 
 		res.status(200).json({
@@ -33,7 +31,7 @@ export const getTasksController = (req: Request, res: Response) => {
 	}
 }
 
-export const getTaskController = (req: Request, res: Response) => {
+export const getTaskController = (req, res) => {
 
 	try {
 
@@ -51,7 +49,7 @@ export const getTaskController = (req: Request, res: Response) => {
 
 
 
-export const updateTaskController = (req: Request, res: Response) => {
+export const updateTaskController = (req, res) => {
 
 	try {
 
@@ -69,7 +67,7 @@ export const updateTaskController = (req: Request, res: Response) => {
 
 
 
-export const changeTaskStatus = (req: Request, res: Response) => {
+export const changeTaskStatus = (req, res) => {
 
 	try {
 
@@ -88,7 +86,7 @@ export const changeTaskStatus = (req: Request, res: Response) => {
 
 
 
-export const deleteTaskController = (req: Request, res: Response) => {
+export const deleteTaskController = (req, res) => {
 
 	try {
 

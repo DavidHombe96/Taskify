@@ -6,19 +6,15 @@
   "author": "DavidHombe96 <90213056+DavidHombe96@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "dev": "nodemon",
+    "build": " ",
+    "dev": "nodemon src/server.js",
     "start": "node dist/server.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.9.0",
     "eslint": "^9.15.0",
     "globals": "^15.12.0",
     "nodemon": "^3.1.7",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.3",
     "typescript-eslint": "^8.14.0"
   },
   "dependencies": {
