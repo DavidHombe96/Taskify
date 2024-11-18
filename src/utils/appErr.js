@@ -1,5 +1,5 @@
 
-function appErr(message, statusCode) {
+export function appErr(message, statusCode) {
 	let error = new Error(message);
 
 	error.statusCode = statusCode ? statusCode : 500;
@@ -8,5 +8,3 @@ function appErr(message, statusCode) {
 	return error;
 
 }
-
-export default appErr;

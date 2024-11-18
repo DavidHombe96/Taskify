@@ -9,10 +9,7 @@ export const createTaskController = (req, res) => {
 		})
 
 	} catch (error) {
-		res.status(500).json({
-      error: error,
-      message: "Não foi possível criar a tarefa"
-    });
+		res.json(error.message);
 	}
 }
 
