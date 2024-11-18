@@ -4,6 +4,8 @@ export const registerUserController = (req, res) => {
 
 	try {
 
+		const userFound = 
+
 		res.status(201).json({
 			lastname, firstname, email, password
 		})
