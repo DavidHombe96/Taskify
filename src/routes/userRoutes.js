@@ -1,6 +1,6 @@
 import { Router } from "express"
-import { deleteUserController, getUserController, getUsersController, loginUserController, registerUserController, updateUserController } from "../controllers/userController";
-
+import { deleteUserController, getUserController, getUsersController, loginUserController, perfilUserController, registerUserController, updateUserController } from "../controllers/userController.js";
+import { isLogin } from "../middleware/isLogin.js";
 export const userRouter = Router()
 
 // api/v1/users/register
@@ -14,6 +14,8 @@ userRouter.get("/", getUsersController)
 
 // api/v1/users/:id
 userRouter.get("/:id", getUserController)
+
+userRouter.get("/perfil/:id", isLogin,  perfilUserController)
 
 // api/v1/users/:id
 userRouter.put("/:id", updateUserController)
